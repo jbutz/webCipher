@@ -180,7 +180,7 @@ var Mason = {
 			z: [true,[[0,charH],[Math.floor(charW / 2), charH]]]
 		};
 	},
-	draw: function(l, c, sW, sH, drawLetter)
+	draw: function(l, c, sW, sH, drawLetter, letterLoc, fontSize)
 	{
 		var hasDot   = Mason.letterMap[l][0];
 		var pathData = Mason.letterMap[l][1];
@@ -207,9 +207,44 @@ var Mason = {
 		
 		if (drawLetter)
 		{
+			if(!letterLoc)
+			{
+				letterLoc = "B";
+			}
+			else
+			{
+				letterLoc = letterLoc.toUpperCase();
+				if(letterLoc != 'T' && letterLoc != 'R' && letterLoc != 'L' && letterLoc != 'B')
+				{
+					letterLoc = 'B';
+				}
+			}
+			var x = 0;
+			var y = 0;
+			switch(letterLoc)
+			{
+				case 'T': // Top
+					y = -1 * this.charH;
+					break;
+				case 'R': // Right
+					x = this.charW;
+					break;
+				case 'L': // Left
+					x = -1 * this.charW;
+					break;
+				case 'B': // Bottom
+					y = this.charH;
+					break;
+			}
 			c.textBaseline = "middle";
 			c.textAlign = "center";
-			c.fillText(l, Math.floor(this.charW / 2) + sW + fudge, Math.floor(this.charH / 2) + sH);
+			if(!fontSize)
+			{
+				fontSize = "1.0em";
+			}
+			c.font = "bold " + fontSize + " sans-serif";
+			
+			c.fillText(l.toUpperCase(), Math.floor(this.charW / 2) + sW + x, Math.floor(this.charH / 2) + sH + y);
 		}
 	}
 }
@@ -221,8 +256,8 @@ function testDraw()
 
 	var m = Mason;
 	m.init(50,50);
-	m.draw('a',context,0,0,false);
-	m.draw('j',context,60,00,false);
+	m.draw('a',context,0,0,true);
+	m.draw('j',context,60,00,true,'R','2.0em');
 	m.draw('s',context,0,60,false);
 	m.draw('y',context,60,60,false);
 }
