@@ -104,14 +104,44 @@ var Mason = {
 				[0,0],
 				[charW,0]]
 			],
-		s: [],
-		t: [],
-		u: [],
-		v: [],
-		w: [],
-		x: [],
-		y: [],
-		z: []
+		s: [false,[
+				[0,0],
+				[Math.floor(charW / 2),charH],
+				[charW, 0]]
+			],
+		t: [false,[
+				[0,0],
+				[charW,Math.floor(charH / 2)],
+				[0,charH]]
+			],
+		u: [false,[
+				[charW,0],
+				[0,Math.floor(charH / 2)],
+				[charW,charH]]
+			],
+		v: [false,[
+				[0,charH],
+				[Math.floor(charW / 2), charH]]
+			],
+		w: [true,[
+				[0,0],
+				[Math.floor(charW / 2),charH],
+				[charW, 0]]
+			],
+		x: [true,[
+				[0,0],
+				[charW,Math.floor(charH / 2)],
+				[0,charH]]
+			],
+		y: [true,[
+				[charW,0],
+				[0,Math.floor(charH / 2)],
+				[charW,charH]]
+			],
+		z: [true,[
+				[0,charH],
+				[Math.floor(charW / 2), charH]]
+			]
 	},
 	draw: function(l, c, sW, sH, drawLetter)
 	{
@@ -155,4 +185,6 @@ function testDraw()
 	Mason.draw('b',context,30,0,true);
 	Mason.draw('c',context,60,0,true);
 	Mason.draw('j',context,0,60,true);
+	Mason.draw('s',context,30,60,true);
+	Mason.draw('y',context,60,60,true);
 }
