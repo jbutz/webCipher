@@ -1,0 +1,107 @@
+/*********************************************************
+ * Colors and such!
+ */
+body {
+	background-color: #000;
+}
+.main section.dark {
+	background-color: #262626;
+	p {
+		color: #EAF2D9;
+	}
+}
+/********************************************************/
+.grid_1() { width:68px; }
+.grid_2() { width:160px; }
+.grid_3() { width:252px; }
+.grid_4() { width:344px; }
+.grid_5() { width:436px; }
+.grid_6() { width:528px; }
+.grid_7() { width:620px; }
+.grid_8() { width:712px; }
+.grid_9() { width:804px; }
+.grid_10() { width:896px; }
+
+.column() {
+	margin: 0 12px;
+	overflow: hidden;
+	float: left;
+	display: inline;
+}
+.row {
+	width: 920px;
+	padding: 0 48px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.row .row {
+	margin: 0 -12px;
+	width: auto;
+	display: inline-block;
+}
+/*		Default Layout: 992px. 
+		Gutters: 24px.
+		Outer margins: 48px.
+		Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
+
+.header {
+	.row;
+	.grid_10;
+	background-color: #00FF00;
+	height: 100px;
+}
+.menu {
+	.row;
+	.grid_10;
+	height: 32px;
+}
+.main  section {
+	.row;
+	.grid_10;
+}
+
+
+/*		Tablet Layout: 768px.
+		Gutters: 24px.
+		Outer margins: 28px.
+		Inherits styles from: Default Layout.
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	
+}
+
+
+
+/*		Mobile Layout: 320px.
+		Gutters: 24px.
+		Outer margins: 34px.
+		Inherits styles from: Default Layout.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
+
+@media only screen and (max-width: 767px) {
+	
+	
+}
+
+
+
+/*		Wide Mobile Layout: 480px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+	
+}
