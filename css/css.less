@@ -1,13 +1,57 @@
 /*********************************************************
  * Colors and such!
  */
+@dark1: #385E0F; 
+@dark1: #262626; 
+@dark2: #262626;
+@darkC: #EAF2D9;
 body {
 	background-color: #000;
+	font-family: 'Georgia',serif;
+	font-size: 18px;
+	line-height: 26px;
 }
 .main section.dark {
-	background-color: #262626;
+	background-color: @dark1;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
 	p {
-		color: #EAF2D9;
+		color: @darkC;
+		text-shadow: 0 -1px 1px @dark1;
+	}
+}
+.main section.dark2 {
+	background-color: @dark2;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+	p {
+		color: @darkC;
+		text-shadow: 0 -1px 1px @dark2;
+	}
+}
+.main div.dark {
+	background-color: @dark1;
+}
+.main div.dark2 {
+	background-color: @dark2;
+}
+div.headerdark {
+	background-color: @dark1;
+}
+div.menudark {
+	background-color: #CDBE70;
+	background-color: #444;
+}
+div.menu {
+	ul {
+		list-style-type: none;
+
+		li {
+			float: left;
+			margin-right: 10px;
+			margin-left: 10px;
+			padding-left: 5px;
+			padding-right: 5px;
+			color: @darkC;
+		}
 	}
 }
 /********************************************************/
@@ -50,8 +94,7 @@ px      68    160    252    344    436    528    620    712    804    896    */
 .header {
 	.row;
 	.grid_10;
-	background-color: #00FF00;
-	height: 100px;
+	height: 200px;
 }
 .menu {
 	.row;
@@ -61,6 +104,8 @@ px      68    160    252    344    436    528    620    712    804    896    */
 .main  section {
 	.row;
 	.grid_10;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 
